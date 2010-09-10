@@ -12,3 +12,6 @@
   else if($function == 'sha1') {
     echo sha1(stripslashes(utf8_decode($_POST['text'])));
   }
+  else if($function == 'crc32') {
+    echo crc32(stripslashes(utf8_decode($_POST['text'])));
+  }

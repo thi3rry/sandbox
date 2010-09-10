@@ -9,14 +9,14 @@
     <title><?php echo $title ?></title>
     <meta name="description" content="<?php echo $description ?>" />
 
-    <link href="css/reset.css" rel="stylesheet" type="text/css"/>
-    <link href="css/smoothness/jquery-ui-1.8.2.custom" rel="stylesheet" type="text/css"/>
-    <link href="css/Sandbox.css" rel="stylesheet" type="text/css" />
-    <link href="css/main.css" rel="stylesheet" type="text/css"/>
+    <link href="css/reset.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="css/smoothness/jquery-ui-1.8.2.custom.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="css/Sandbox.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/main.css" rel="stylesheet" type="text/css" media="all"/>
 
     
     <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
-    <script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min"></script>
+    <script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script>
     <script type="text/javascript" src="js/Sandbox.js"></script>
     <script type="text/javascript" src="modules/sandbox.feedburner.js"></script>
     <script type="text/javascript" src="modules/sandbox.pagerank.js"></script>
@@ -32,13 +32,13 @@
       <p class="description"><?php echo $description ?></p>
     </header>
     <section id="content">
-      <div class="sandbox-modules-htmlpreview"></div>
+      <div class="sandbox-modules-phpfunctions"></div>
       <div class="sandbox-modules-feedburner"></div>
       <div class="sandbox-modules-pagerank"></div>
-      <div class="sandbox-modules-phpfunctions"></div>
+      <div class="sandbox-modules-htmlpreview"></div>
     </section>
     <footer>
-      &copy; 2008 <a href="http://thi3rry.fr/">thi3rry.fr</a>
+      &copy; 2010 <a href="http://thi3rry.fr/">thi3rry.fr</a>
     </footer>
 
   </body>

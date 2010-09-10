@@ -1,0 +1,15 @@
+.sandbox-modules-phpfunctions ul li {
+  display: inline-block;
+}
+.sandbox-modules-phpfunctions .input,
+.sandbox-modules-phpfunctions .output {
+  display: inline-block;
+}
+.sandbox-modules-phpfunctions .input label,
+.sandbox-modules-phpfunctions .output label {
+  display: block;
+}
+.sandbox-modules-phpfunctions h3 small {
+  font-size: 10px;
+  font-weight: normal;
+}

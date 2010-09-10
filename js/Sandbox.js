@@ -6,12 +6,15 @@
 
     init: function() {
       $('body').prepend(Sandbox.stateContainer);
-      $('body').append(Sandbox.console.htmlContainer);
+      $('body').append(Sandbox.console.htmlContainer.hide());
       Sandbox.loadAllModules();
     },
     loadAllModules: function(){
       for(key in Sandbox.modules){
         $('.sandbox-modules-'+key).each(function(){
+          $(this).addClass('module');
+          // load css module file
+          $("head>link[href$=main.css]").before($('<style type="text/css" media="all" rel="modules/sandbox.'+key+'.css"></style>').load('modules/sandbox.'+key+'.css'))
           var module = Sandbox.modules[key];
           $(this).append('<h2>'+module.infos.title+'</h2>')
           module.init($(this));

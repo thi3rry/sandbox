@@ -49,3 +49,7 @@
 #sandbox-console li {
   background-color: transparent;
 }
+
+.module {
+  margin: 5px;
+}
