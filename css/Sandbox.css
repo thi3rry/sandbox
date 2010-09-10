@@ -1,0 +1,51 @@
+.sandbox-error {
+  height: 200px;
+  left: 50%;
+  margin: -100px 0 0 -150px;
+  position: absolute;
+  top: 50%;
+  width: 300px;
+}
+
+.sandbox-error-msg,
+.sandbox-error-log {
+  color: white;
+}
+.sandbox-error-notice {
+  color: blue;
+}
+.sandbox-error-warning {
+  color: orange;
+}
+.sandbox-error-error {
+  color: red;
+}
+
+#sandbox-state {
+  background-color: transparent;
+  height: 20px;
+  position: absolute;
+  right: 0;
+  width: 20px;
+}
+
+#sandbox-console {
+  background: #000;
+  bottom: 0;
+  height: 200px;
+  overflow: auto;
+  position: absolute;
+  width: 100%;
+}
+
+#sandbox-console .date,
+#sandbox-console .msg{
+  display: inline-block;
+  font-family: monospace;
+}
+#sandbox-console .date {
+  font-weight: bold;
+}
+#sandbox-console li {
+  background-color: transparent;
+}

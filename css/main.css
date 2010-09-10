@@ -63,20 +63,17 @@ body {
 	}
 
 	
-	#page {
-		
-	}
-	#header {
+	header {
 		background-color: #555555;
 	}
-		#header h1 {
+		header h1 {
 			margin: 0 10px 10px 10px;
 			font-size: 25px;
 			font-weight: bold;
-			text-align: right;
 		}
 	#content {
 		padding: 10px;
+                
 	}
 		#content ul li {
 			padding: 10px 0px;
@@ -85,7 +82,7 @@ body {
 				font-size: 20px;
 				font-weight: bold;
 			}
-			#content ul li input#feedburnerid {
+			.sandbox-modules-feedburner input {
 				font-size: 15px;
 				padding: 5px;
 				padding-left: 25px;
