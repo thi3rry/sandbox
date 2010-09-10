@@ -1,0 +1,2 @@
+# Permettre a IE de reconnaitre le pngfix.htc de retraitement des png transparents
+AddType text/x-component .htc

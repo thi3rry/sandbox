@@ -1,0 +1,99 @@
+body { 
+	font-size: 12px; 
+	color: #DDDDDD; 
+	background-color: #222222; 
+	padding-bottom: 50px;
+}
+	ul {
+		list-style: none; 
+	}
+	hr {
+		border-bottom: 1px solid #000000;
+	}
+	input ,
+	textarea{
+		border: 1px solid #000000;
+	}
+	a { 
+		color: #e45a49; 
+		color: #495ae4; 
+		text-decoration: none; 
+	}
+	a:hover { 
+		text-decoration: underline; 
+	}
+	img.favicon { 
+		border: none !important; 
+		display: inline; 
+		width: 16px; 
+		height: 16px; 
+		margin: 0px 0px -4px 4px; 
+	}
+	img.favicon:hover { 
+		border: none;
+	}
+	.clearer { 
+		clear: both; 
+	}
+	.clear-left { 
+		clear: left; 
+	}
+	.clear-right {
+		clear: right; 
+	}
+	.left {
+		float: left;
+	}
+	.right {
+		float: right;
+	}
+	.hidden { 
+		display: none; 
+	}
+	q { 
+		font-style: italic; 
+	}
+	code { 
+		border-left: 5px solid #0F0; 
+		padding: 5px; 
+		margin: 10px 0px;
+		background: #000000;
+		color: #FFFFFF;
+		display: block;
+	}
+
+	
+	#page {
+		
+	}
+	#header {
+		background-color: #555555;
+	}
+		#header h1 {
+			margin: 0 10px 10px 10px;
+			font-size: 25px;
+			font-weight: bold;
+			text-align: right;
+		}
+	#content {
+		padding: 10px;
+	}
+		#content ul li {
+			padding: 10px 0px;
+		}
+			#content ul li h3 {
+				font-size: 20px;
+				font-weight: bold;
+			}
+			#content ul li input#feedburnerid {
+				font-size: 15px;
+				padding: 5px;
+				padding-left: 25px;
+				background-image: url(../img/feedburner.ico);
+				background-repeat: no-repeat;
+				background-position: 5px 5px;
+			}
+	#footer {
+		position: relative;
+		bottom: 5px;
+	}
