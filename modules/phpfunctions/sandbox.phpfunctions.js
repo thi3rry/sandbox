@@ -17,7 +17,7 @@ Sandbox.modules.phpfunctions = {
       inputs[functionName] = $('<textarea class="result output" name="input-'+functionName+'" cols="20" rows="5" rel="'+functionName+'"></textarea>')
                               .keyup(function(){
                                 this.functionName = $(this).attr('rel');
-                                resultContainers[this.functionName].load('modules/sandbox.phpfunctions.php?function='+this.functionName, {text: inputs[this.functionName].val() })
+                                resultContainers[this.functionName].load('index.php?action=get_module_php&moduleName=phpfunctions&function='+this.functionName, {text: inputs[this.functionName].val() })
                               });
 
       var item = $('<li></li>')

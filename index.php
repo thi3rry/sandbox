@@ -1,50 +1,48 @@
 <?php
-  $title = "Sandbox";
-  $description = "Bac à sable, page de test, outils divers...";
-?><!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="fr-FR">
-  <head>
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+  function _get_global_var($var, &$globalVar, $default = false){
+    if (isset($globalVar[$var])) {
+      $return = $globalVar[$var];
+    }
+    else {
+      $return = $default;
+    }
 
-    <title><?php echo $title ?></title>
-    <meta name="description" content="<?php echo $description ?>" />
+    return $return;
+  }
+  function _get($var, $default = NULL) {
+    return _get_global_var($var, $_GET, $default);
+  }
+  function _post($var, $default = NULL) {
+    return _get_global_var($var, $_POST, $default);
+  }
+  function _server($var, $default = NULL) {
+    return _get_global_var($var, $_SERVER, $default);
+  }
 
-    <link href="css/reset.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="css/smoothness/jquery-ui-1.8.2.custom.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="css/Sandbox.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="css/main.css" rel="stylesheet" type="text/css" media="all"/>
-    
-    <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
-    <script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script>
-    <script type="text/javascript" src="js/Sandbox.js"></script>
+  if (_get('action') == 'get_module_js'){
+    require_once('actions/module.php');
+    get_module_js(_get('moduleName'));
+  }
+  else if (_get('action') == 'get_module_css'){
+    require_once('actions/module.php');
+    get_module_css(_get('moduleName'));
+  }
+  else if (_get('action') == 'get_module_php'){
+    require_once('actions/module.php');
+    get_module_php(_get('moduleName'));
+  }
+  else if (_get('action') == 'get_module_file'){
+    /** @todo */
+//    require_once('actions/module.php');
+//    get_module_file(_get('moduleName'), NULL, 'file');
+  }
 
-    <script type="text/javascript" src="js/main.js"></script>
 
-    <script type="text/javascript">
-      $(document).ready (function () {
-        Sandbox.init()
-        Sandbox.loading();
-        Sandbox.loadModules(['phpfunctions', 'htmlpreview', 'feedburner', 'pagerank'], true);
-        Sandbox.stopLoading();
-      });
-    </script>
-    
-    <!--[if IE]><link rel="stylesheet" type="text/css" href="css/ie.css"/><![endif]-->
-  </head>
-  <body>
-    <header>
-      <h1><?php echo $title ?></h1>
-      <p class="description"><?php echo $description ?></p>
-    </header>
-    <section id="content">
-      <div class="sandbox-modules-phpfunctions"></div>
-      <div class="sandbox-modules-feedburner"></div>
-      <div class="sandbox-modules-pagerank"></div>
-      <div class="sandbox-modules-htmlpreview"></div>
-    </section>
-    <footer>
-      &copy; 2010 <a href="http://thi3rry.fr/">thi3rry.fr</a>
-    </footer>
-
-  </body>
-</html>
+  require_once('lib/template.class.php');
+  $TPL = array (
+    'title' => "Sandbox",
+    'description' => "Bac à sable, page de test, outils divers...",
+  );
+  $homepage = new Template('homepage.php', $TPL, true);
+  $homepage->include_tpl(TRUE);
+?>

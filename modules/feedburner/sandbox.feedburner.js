@@ -11,7 +11,7 @@ Sandbox.modules.feedburner = {
       Sandbox.loading();
       $.ajax({
         type:'GET',
-        url:'modules/sandbox.feedburner.php',
+        url:'index.php?action=get_module_php&moduleName=feedburner',
         data:{
           feedburnerid:escape(input.attr('value')),
           nothing:'none'

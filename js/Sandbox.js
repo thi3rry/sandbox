@@ -35,10 +35,10 @@
       }
     },
     loadModule: function(moduleName, initAfterLoad){
-      $.getScript('modules/sandbox.'+moduleName+'.js', function(){
+      $.getScript('index.php?action=get_module_js&moduleName='+moduleName, function(){
         if(initAfterLoad) Sandbox.initModule(moduleName);
       });
-      $("head>link[href$=main.css]").before($('<style type="text/css" media="all" rel="modules/sandbox.'+moduleName+'.css"></style>').load('modules/sandbox.'+moduleName+'.css'))
+      $("head>link[href$=main.css]").before($('<style type="text/css" media="all" rel="modules/sandbox.'+moduleName+'.css"></style>').load('index.php?action=get_module_css&moduleName='+moduleName))
     },
     initModule: function(moduleName){
       $('.sandbox-modules-'+moduleName).html('');

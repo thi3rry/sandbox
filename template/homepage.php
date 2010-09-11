@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="fr-FR">
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+
+    <title>#title#</title>
+    <meta name="description" content="#description#" />
+
+    <link href="css/reset.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="css/smoothness/jquery-ui-1.8.2.custom.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="css/Sandbox.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/main.css" rel="stylesheet" type="text/css" media="all"/>
+
+    <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script>
+    <script type="text/javascript" src="js/Sandbox.js"></script>
+
+    <script type="text/javascript" src="js/main.js"></script>
+
+    <script type="text/javascript">
+      $(document).ready (function () {
+        Sandbox.init()
+        Sandbox.loading();
+        Sandbox.loadModules(['phpfunctions', 'htmlpreview', 'feedburner', 'pagerank'], true);
+        Sandbox.stopLoading();
+      });
+    </script>
+
+    <!--[if IE]><link rel="stylesheet" type="text/css" href="css/ie.css"/><![endif]-->
+  </head>
+  <body>
+    <header>
+      <h1>#title#</h1>
+      <p class="description">#description#</p>
+    </header>
+    <section id="content">
+      <div class="sandbox-modules-phpfunctions"></div>
+      <div class="sandbox-modules-feedburner"></div>
+      <div class="sandbox-modules-pagerank"></div>
+      <div class="sandbox-modules-htmlpreview"></div>
+    </section>
+    <footer>
+      &copy; <?php echo date('Y') ?> <a href="http://thi3rry.fr/">thi3rry.fr</a>
+    </footer>
+
+  </body>
+</html>
