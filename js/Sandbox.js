@@ -84,9 +84,16 @@
         }
       }
     },
-    showError: function(errorKey){
+    showError: function(errorKey, delay){
+      if (!delay) delay = 2000;
       errorKey  = errorKey - 1;
-      $('body').append('<div class="sandbox-error sandbox-error-'+Sandbox.errors[errorKey].type+'">'+Sandbox.errors[errorKey].msg+'</div>');
+      var errorContainer = $('<div class="sandbox-error sandbox-error-'+Sandbox.errors[errorKey].type+'">'+Sandbox.errors[errorKey].msg+'</div>').hide();
+      $('body').append(errorContainer);
+      errorContainer.fadeIn(1000)
+                    .delay(delay)
+                    .fadeOut(1000)
+                    .delay(10, function(){$(this).remove()})
+      ;
     }
   };
 })(jQuery)
