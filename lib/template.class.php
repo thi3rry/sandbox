@@ -2,14 +2,14 @@
 class Template {
   private $template;
   private $tmpFilePath;
-  private $filePath;
+  private $file;
   private $vars;
 
   private $templateInitialized = false;
 
-  function Template($filepath, $vars = array(), $forceCache = false) {
-    $this->filepath = $filepath;
-    $this->tmpFilepath = 'tmp/template/'. $this->filepath;
+  function Template($file, $vars = array(), $forceCache = false) {
+    $this->file = $file;
+    $this->tmpFilepath = 'tmp/template/'. $this->file;
     $this->vars = $vars;
     
     $this->create_temp_dir();
@@ -54,7 +54,7 @@ class Template {
   }
 
   function init_template() {
-    if(($this->template = file_get_contents("template/{$this->filepath}")) != 0) {
+    if(($this->template = file_get_contents(get_filepath($this->file, 'template'))) != 0) {
       $this->templateInitialized = true;
     }
   }
@@ -72,7 +72,7 @@ class Template {
       include_once($this->tmpFilepath);
     }
     else {
-      throw new Exception("The template file '{$this->filepath}' could not be found.", $code, $previous);
+      throw new Exception("The template file '{$this->file}' could not be found.", $code, $previous);
     }
     if ($exit) {
       exit;

@@ -1,5 +1,5 @@
 <?php
-	require_once(dirname(__FILE__).'/../lib/Snoopy.class.php');
+	require_once(SANDBOX_LIB_DIR . '/Snoopy.class.php');
 	$action = isset($_GET['action']) ? $_GET['action'] : 'nb';
 	$feedBurnerID = isset($_GET['feedburnerid']) ? stripslashes($_GET['feedburnerid']) : 'LeBlogDeThi3rry';
 
