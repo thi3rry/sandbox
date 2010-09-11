@@ -10,10 +10,10 @@
       Sandbox.loadAllModules();
       Sandbox.initAllModules();
     },
-    loadAllModules: function(){
+    loadAllModules: function(initAfterLoad){
       // load css module file
       for(key in Sandbox.modules){
-        Sandbox.loadModule(key);
+        Sandbox.loadModule(key, initAfterLoad);
       }
     },
     initAllModules: function(){
@@ -22,10 +22,10 @@
         Sandbox.initModule(key);
       }
     },
-    loadModules: function(modules){
+    loadModules: function(modules, initAfterLoad){
       for(key in modules){
         moduleName = modules[key];
-        Sandbox.loadModule(moduleName);
+        Sandbox.loadModule(moduleName, initAfterLoad);
       }
     },
     initModules: function(modules){
@@ -34,9 +34,10 @@
         Sandbox.initModule(moduleName);
       }
     },
-    loadModule: function(moduleName){
-//      $.getScript('modules/sandbox.'+moduleName+'.js');
-//      $("head>script[src$=Sandbox.js]").after($('<script type="text/javascript" rel="modules/sandbox.'+moduleName+'.js"></script>').load('modules/sandbox.'+moduleName+'.js'))
+    loadModule: function(moduleName, initAfterLoad){
+      $.getScript('modules/sandbox.'+moduleName+'.js', function(){
+        if(initAfterLoad) Sandbox.initModule(moduleName);
+      });
       $("head>link[href$=main.css]").before($('<style type="text/css" media="all" rel="modules/sandbox.'+moduleName+'.css"></style>').load('modules/sandbox.'+moduleName+'.css'))
     },
     initModule: function(moduleName){

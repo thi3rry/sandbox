@@ -18,16 +18,20 @@
     <script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script>
     <script type="text/javascript" src="js/Sandbox.js"></script>
 
-    <script type="text/javascript" src="modules/sandbox.feedburner.js"></script>
-    <script type="text/javascript" src="modules/sandbox.pagerank.js"></script>
-    <script type="text/javascript" src="modules/sandbox.phpfunctions.js"></script>
-    <script type="text/javascript" src="modules/sandbox.htmlpreview.js"></script>
-
     <script type="text/javascript" src="js/main.js"></script>
+
+    <script type="text/javascript">
+      $(document).ready (function () {
+        Sandbox.init()
+        Sandbox.loading();
+        Sandbox.loadModules(['phpfunctions', 'htmlpreview', 'feedburner', 'pagerank'], true);
+        Sandbox.stopLoading();
+      });
+    </script>
     
     <!--[if IE]><link rel="stylesheet" type="text/css" href="css/ie.css"/><![endif]-->
   </head>
-  <body onload="Sandbox.init()">
+  <body>
     <header>
       <h1><?php echo $title ?></h1>
       <p class="description"><?php echo $description ?></p>
