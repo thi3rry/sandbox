@@ -15,3 +15,12 @@
   else if($function == 'crc32') {
     echo crc32(stripslashes(utf8_decode($_POST['text'])));
   }
+  else if($function == 'crypt') {
+    echo crypt(stripslashes(utf8_decode($_POST['text'])));
+  }
+  else if($function == 'unserialize') {
+    echo var_dump(unserialize(stripslashes(utf8_decode($_POST['text']))));
+  }
+  else if($function == 'uniqid') {
+    echo uniqid(stripslashes(utf8_decode($_POST['text'])));
+  }

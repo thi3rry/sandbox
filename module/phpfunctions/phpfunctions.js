@@ -3,7 +3,16 @@ Sandbox.modules.phpfunctions = {
     title: "Module phpfunctions"
   },
   init: function(jqueryObject) {
-    var availableFunctions = {htmlentities:'Convert all applicable characters to HTML entities', rawurlencode:'URL-encode according to RFC 1738', md5:'Calculate the md5 hash of a string', sha1:'Calculate the sha1 hash of a string', crc32:'Calculates the crc32 polynomial of a string'};
+    var availableFunctions = {
+      htmlentities:'Convert all applicable characters to HTML entities',
+      rawurlencode:'URL-encode according to RFC 1738',
+      md5:'Calculate the md5 hash of a string',
+      sha1:'Calculate the sha1 hash of a string',
+      crc32:'Calculates the crc32 polynomial of a string',
+      crypt:'One-way string hashing',
+      unserialize:'',
+      uniqid:''
+    };
     var resultContainers = new Array();
     var inputs = new Array();
     jqueryObject.append('<ul></ul>');
