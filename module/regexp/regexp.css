@@ -1,0 +1,14 @@
+.sandbox-modules-regexp .matches {
+  height: 20px;
+  width: 100px;
+  padding: 5px;
+  text-align: center;
+}
+.sandbox-modules-regexp .matches.false {
+  background: red;
+  display: inline-block;
+}
+.sandbox-modules-regexp .matches.true {
+  background: green;
+  display: inline-block;
+}

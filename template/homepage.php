@@ -13,7 +13,7 @@
     $(document).ready (function () {
       Sandbox.init()
       Sandbox.loading();
-      Sandbox.loadModules(['phpfunctions', 'htmlpreview', 'feedburner', 'pagerank'], true);
+      Sandbox.loadModules(['phpfunctions', 'regexp', 'htmlpreview', 'feedburner', 'pagerank'], true);
       Sandbox.stopLoading();
     });
   </script>
@@ -28,6 +28,7 @@
     <div class="sandbox-modules-feedburner"></div>
     <div class="sandbox-modules-pagerank"></div>
     <div class="sandbox-modules-htmlpreview"></div>
+    <div class="sandbox-modules-regexp"></div>
   </section>
   <footer>
     &copy; <?php echo date('Y') ?> <a href="http://thi3rry.fr/">thi3rry.fr</a>
