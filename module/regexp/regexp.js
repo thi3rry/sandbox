@@ -1,18 +1,20 @@
-Sandbox.modules.regexp = {
+  Sandbox.modules.regexp = {
   infos: {
     title: "Module JSRegexp"
   },
   init: function(jqueryObject) {
     var resultContainer = $('<div class="matches true"></div>');
-    var inputRegexp = $('Regexp pattern : <input class="input regexp" name="input-regexp" value=".?"/>')
+    var inputRegexp = $('<input class="input regexp" name="input-regexp" value=".?"/>')
                             .keyup(function(){
                               Sandbox.modules.regexp.result(resultContainer, inputRegexp.attr('value'), input.val(), resultContainer)
                             });
-    var input = $('Input : <textarea class="input" name="input-regexp-content" cols="20" rows="5"></textarea>')
+    var input = $('<textarea class="input" name="input-regexp-content" cols="20" rows="5"></textarea>')
                             .keyup(function(){
                               Sandbox.modules.regexp.result(resultContainer, inputRegexp.attr('value'), input.val(), resultContainer)
                             });
+    jqueryObject.append('<label for="input-regexp">Regexp pattern :</label>');
     jqueryObject.append(inputRegexp);
+    jqueryObject.append('<label for="input-regexp-content">Input :</label>');
     jqueryObject.append(input);
     jqueryObject.append(resultContainer);
   },
