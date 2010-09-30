@@ -18,6 +18,16 @@ function display_error($errno, $errstr, $errfile, $errline, $errcontext){
       E_WARNING => 'warning',
       E_USER_WARNING => 'warning',
   );
+  $errcss = array(
+      E_ERROR => 'background-color: #fcc; color: red;',
+      E_USER_ERROR => 'background-color: #fcc; color: red;',
+      E_NOTICE => 'background-color: #ccf; color: blue;',
+      E_USER_NOTICE => 'background-color: #ccf; color: blue;',
+      E_PARSE => 'background-color: #cfc; color: green;',
+      E_WARNING => 'background-color: #ffb; color: orange;',
+      E_USER_WARNING => 'background-color: #ffb; color: orange;',
+  );
+
 
   if (!defined('CUSTOM_ERROR_DONT_SHOW_FILE')) {
     $pathinfo = pathinfo($errfile);
@@ -38,27 +48,27 @@ function display_error($errno, $errstr, $errfile, $errline, $errcontext){
     }
   }
   $errtype = isset($errtitle[$errno]) ? $errtitle[$errno] : "error-$errno";
-  
-  echo "<div style='background: red; color: black;'>";
+
+  $output = '';
   switch ($errno) {
-    case E_USER_ERROR:
-    case E_USER_WARNING:
-    case E_USER_NOTICE:
-    case E_NOTICE:
-    case E_WARNING:
     case E_ERROR:
+    case E_USER_ERROR:
+    case E_NOTICE:
+    case E_USER_NOTICE:
+    case E_WARNING:
+    case E_USER_WARNING:
     case E_PARSE:
-      echo "<span class='{$errtitle[$errno]}' style='text-transform: capitalize; font-weight: bold;'>{$errtitle[$errno]}:</span> $errstr";
+      $output .= "<span class='{$errtitle[$errno]}' style='text-transform: capitalize; font-weight: bold;'>{$errtitle[$errno]}:</span> $errstr";
     break;
     default:
-      echo "<span class='error-$errno' style='text-transform: capitalize; font-weight: bold;'>error n°$errno:</span> $errstr";
+      $output .= "<span class='error-$errno' style='text-transform: capitalize; font-weight: bold;'>error n°$errno:</span> $errstr";
     break;
-      
-  }
-  echo $filestr;
-  echo "</div>";
 
+  }
+  $css = $errcss[$errno];
+  
   if($errno < E_NOTICE) {
+    echo "<div style='border: 2px dashed red; padding: 5px;$css'>$output $filestr</div>";
     exit;
   }
 
