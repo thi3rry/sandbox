@@ -20,6 +20,9 @@
   padding: 2px;
   border: 1px solid white;
 }
+.sandbox-modules-preg_match_all .output {
+  width: 100%;
+}
 
 .sandbox-modules-preg_match_all h3 small {
   font-size: 10px;
