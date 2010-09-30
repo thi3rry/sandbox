@@ -1,0 +1,27 @@
+.sandbox-modules-preg_match_all ul li {
+  display: inline-block;
+}
+.sandbox-modules-preg_match_all .input,
+.sandbox-modules-preg_match_all .output {
+  display: inline-block;
+  width: 400px;
+}
+.sandbox-modules-preg_match_all .input label,
+.sandbox-modules-preg_match_all .output label {
+  display: block;
+}
+.sandbox-modules-preg_match_all .output,
+.sandbox-modules-preg_match_all .output label{
+  display: block;
+}
+.sandbox-modules-preg_match_all .output table td,
+.sandbox-modules-preg_match_all .output table th {
+  border-collapse: collapse;
+  padding: 2px;
+  border: 1px solid white;
+}
+
+.sandbox-modules-preg_match_all h3 small {
+  font-size: 10px;
+  font-weight: normal;
+}
